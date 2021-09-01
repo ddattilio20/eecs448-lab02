@@ -43,12 +43,20 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	/** TODO
-		Fix this method
-	*/
-
+	while(temp != nullptr)
+	{
+		if (temp->getValue() == value)
+		{
+			isFound = true;
+		}
+		else
+		{
+			temp = temp->getNext();
+		}
+	}
 	return(isFound);
 }
+
 
 template <typename T>
 std::vector<T> LinkedList<T>::toVector() const
